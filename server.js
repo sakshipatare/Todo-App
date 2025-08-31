@@ -4,6 +4,7 @@ dotenv.config();
 import express from "express";
 import { connectUsingMongoose } from "./src/config/mongooseConfig.js";
 import userRouter from "./src/features/user/user.routes.js";
+import teamRouter from "./src/features/team/team.routes.js";
 
 
 import cors from 'cors';
@@ -19,6 +20,7 @@ server.use(cors({
 server.use(express.json());
 
 server.use('/users', userRouter);
+server.use('/teams', teamRouter);
 
 
 server.listen(4000, () => {
